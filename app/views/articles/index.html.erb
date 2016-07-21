@@ -1,21 +1,24 @@
 <marquee behavior="alternate" class="articles-title">listing articles</marquee>
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
+<div class="centre-text">
+  <%= link_to 'New article', new_article_path %>
 
-  <% @articles.each do |article| %>
+  <table align="center">
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit that shit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
-</table>
+
+    <% @articles.each do |article| %>
+      <tr>
+        <td align="left"><%= article.title %></td>
+        <td align= "left"><%= article.text %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit that shit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article_path(article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
